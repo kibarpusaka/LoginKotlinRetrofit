@@ -21,7 +21,7 @@ object ApiService {
             chain.proceed(request)
         }.build()
 
-    val instance: ApiEndpoint by lazy{
+    val instance: ApiEndpoint by lazy {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
@@ -30,18 +30,4 @@ object ApiService {
 
         retrofit.create(ApiEndpoint::class.java)
     }
-//    val endpoint: ApiEndpoint
-//    get() {
-//        val interceptor = HttpLoggingInterceptor()
-//        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-//        val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
-//
-//        val retrofit = Retrofit.Builder()
-//            .baseUrl(BASE_URL)
-//            .client(client)
-//            .addConverterFactory(GsonConverterFactory.create())
-//            .build()
-//        return retrofit.create(ApiEndpoint::class.java)
-//    }
-
 }

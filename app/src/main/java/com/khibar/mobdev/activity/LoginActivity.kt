@@ -41,7 +41,7 @@ class LoginActivity : AppCompatActivity() {
 
             ApiService.instance.Login(email, password).enqueue(object: Callback<ResponseLogin> {
                     override fun onFailure(call: Call<ResponseLogin>, t: Throwable) {
-                        Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+//                        Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
                     }
 
                     override fun onResponse(call: Call<ResponseLogin>, response: Response<ResponseLogin>) {
@@ -51,10 +51,7 @@ class LoginActivity : AppCompatActivity() {
 
                             val intent = Intent(applicationContext, ProfileActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-
                             startActivity(intent)
-
-
                         }else{
                             Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
                         }
@@ -67,7 +64,6 @@ class LoginActivity : AppCompatActivity() {
     }
     override fun onStart() {
         super.onStart()
-
         if(SharedPrefManager.getInstance(this).isLoggedIn){
             val intent = Intent(applicationContext, ProfileActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
