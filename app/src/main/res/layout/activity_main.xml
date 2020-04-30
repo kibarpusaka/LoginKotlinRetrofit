@@ -192,15 +192,5 @@
         android:textSize="10sp"
         android:gravity="center"
         />
-    <Button
-        android:id="@+id/btnMasuk"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="10dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorWhite"
-        android:textColor="@color/colorPrimary"
-        android:text="Masuk"
-        />
 
 </RelativeLayout>

@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
 
                             SharedPrefManager.getInstance(applicationContext).saveUser(response.body()?.data!!)
 
-                            val intent = Intent(applicationContext, ProfileActivity::class.java)
+                            val intent = Intent(applicationContext, MainActivity::class.java)
                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                             startActivity(intent)
                         }else{
@@ -65,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         if(SharedPrefManager.getInstance(this).isLoggedIn){
-            val intent = Intent(applicationContext, ProfileActivity::class.java)
+            val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
             startActivity(intent)
