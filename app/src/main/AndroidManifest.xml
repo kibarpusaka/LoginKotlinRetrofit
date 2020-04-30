@@ -16,8 +16,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".activity.MapsActivity"></activity>
-        <activity android:name=".MapsActivity" />
-        <activity android:name=".activity.MapActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
